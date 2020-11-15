@@ -1,2 +1,16 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Home page</h1><br/>
+<h2>please create an acount, if you already have one you can sign in</h2><br/>
+
+<% if current_user %>
+
+<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+
+<% else %>
+
+<%= link_to 'Sign up', new_user_registration_path %> <br/>
+
+<%= link_to 'Login', new_user_session_path %> <br/>
+
+<% end %>
+
+<%= link_to 'Article', articles_path %>
